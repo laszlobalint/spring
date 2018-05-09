@@ -1,6 +1,7 @@
 package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -9,6 +10,9 @@ public class MainController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @GetMapping(path = "/")
     public @ResponseBody Iterable<User> getAllUsers() {
@@ -26,9 +30,10 @@ public class MainController {
     }
 
     @PostMapping(path = "/")
-    public @ResponseBody String addNewUser(@RequestBody String name, @RequestBody String email) {
+    public @ResponseBody String addNewUser(@RequestBody String name, @RequestBody String password, @RequestBody String email) {
         User newUser = new User();
         newUser.setName(name);
+        newUser.setPassword(password);
         newUser.setEmail(email);
         userRepository.save(newUser);
         return "Saved a new user!";
