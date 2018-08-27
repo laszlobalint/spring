@@ -3,6 +3,7 @@ package org.marketing.newsletter.model;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 public class Subscription {
 
@@ -41,7 +42,22 @@ public class Subscription {
     @Override
     public String toString() {
         return "Subscription details: " +
-                "Full name: " + fullName + '\'' +
-                ", E-mail address: " + emailAddress + '\'';
+                "Full name - " + fullName + '\'' +
+                ", E-mail address - " + emailAddress + '\'';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Subscription)) return false;
+        Subscription that = (Subscription) o;
+        return Objects.equals(getFullName(), that.getFullName()) &&
+                Objects.equals(getEmailAddress(), that.getEmailAddress());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getFullName(), getEmailAddress());
     }
 }

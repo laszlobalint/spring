@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{app.title}">Subscription Confirmation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/subscription.css}" href="../static/css/subscription.css" />
+</head>
+<body>
+    <div class="content">
+        <h1>Dear Client,</h1>
+        <h2>Thank you for your subscription!</h2>
+        <p>It is a pleasure to have you in our newsletter subscribers. You are the <span th:text="${numberOfSubscriptions}" />. reader!</p>
+
+        <h3>Please, see our latest highlights:</h3>
+        <ul th:each="newsletter : ${newsletterHiglights}">
+            <li th:text="${newsletter.subject}" />
+        </ul>
+    </div>
+</body>
+</html>

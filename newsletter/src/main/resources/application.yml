@@ -1,0 +1,11 @@
+subscription:
+  numberOfSubscriptions: 12345
+
+communication:
+  recentNewsLetters:
+    -
+      subject: Terrorist attack in Jakarta
+      content: Catholic church surrounded with dead bodies.
+    -
+      subject: Beckham starts his new club in Miami
+      content: Their logo plan contains pink and black dots.

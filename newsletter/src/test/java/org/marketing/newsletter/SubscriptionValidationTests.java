@@ -26,7 +26,7 @@ public class SubscriptionValidationTests {
 
     @Test(expected = ConstraintViolationException.class)
     public void test_registrationWithNameOfSpaceOnly_fails() throws SubscriptionAlreadyExistsException {
-        service.register(new Subscription(" ", "bloodymary@gmail.com"));
+        service.register(new Subscription("", "bloodymary@gmail.com"));
     }
 
     @Test(expected = ConstraintViolationException.class)
