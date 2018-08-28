@@ -7,8 +7,12 @@ import org.marketing.newsletter.service.exception.SubscriptionAlreadyExistsExcep
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+
+import javax.validation.constraints.Min;
 
 @Service
 public class SubscriptionServiceImpl implements SubscriptionService {
@@ -19,6 +23,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     private  SubscriptionRepository repository;
 
     @Override
+    @Transactional(rollbackFor = SubscriptionAlreadyExistsException.class)
     public void register(Subscription subscription) throws SubscriptionAlreadyExistsException {
 
         Assert.notNull(subscription, "Subscription must not be null!");
@@ -27,9 +32,15 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
         try {
             repository.save(subscription);
-        } catch (RuntimeException duplicate) {
+        } catch (DuplicateKeyException duplicate) {
             logger.error("Error during subscription: {}", duplicate);
             throw new SubscriptionAlreadyExistsException("Subscription already exists with e-mail address: " + subscription.getEmailAddress());
         }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public @Min(0) long getNumbersOfSubscriptions() {
+        return repository.count();
     }
 }

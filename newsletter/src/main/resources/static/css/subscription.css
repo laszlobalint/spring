@@ -25,6 +25,7 @@ form input, div {
     display: block;
 }
 
-.formErrorMessage, fieldErrorMessage {
+.formErrorMessage,
+.fieldErrorMessage {
     color: red;
 }

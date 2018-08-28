@@ -18,6 +18,6 @@ public class NewsletterApplicationTests {
 
 	@Test
 	public void test_registrationWithValidSubscription_successful() throws SubscriptionAlreadyExistsException {
-	    service.register(new Subscription("John Dwayne", "bloodymary@gmail.com"));
+	    service.register(new Subscription("John Dwayne", "vendetta@gmail.com"));
 	}
 }

@@ -1,8 +1,8 @@
 package org.marketing.newsletter.controller;
 
-import org.marketing.newsletter.repository.NewsLetterRepository;
+import org.marketing.newsletter.service.NewsletterService;
+import org.marketing.newsletter.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ConfirmationController {
 
-    @Value("${subscription.numberOfSubscriptions}")
-    private long numberOfSubscriptions;
+    @Autowired
+    private SubscriptionService subscriptionService;
 
     @Autowired
-    private NewsLetterRepository newsLetterRepository;
+    private NewsletterService newsletterService;
 
     @GetMapping(value = "/confirmation")
     public String getConfirmation(Model model) {
-        model.addAttribute("numberOfSubscriptions", numberOfSubscriptions);
-        model.addAttribute("newsletterHiglights", newsLetterRepository.getRecentNewsletters());
+        model.addAttribute("numberOfSubscriptions", subscriptionService.getNumbersOfSubscriptions());
+        model.addAttribute("newsletterHiglights", newsletterService.getRecentNewsletters());
         return "confirmation";
     }
 }

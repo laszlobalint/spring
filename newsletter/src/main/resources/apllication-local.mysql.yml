@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/newsletter
+    platform: mysql
+    username: dbuser
+    password: root
+    initialization-mode: always

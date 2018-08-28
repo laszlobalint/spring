@@ -5,10 +5,14 @@ import org.marketing.newsletter.service.exception.SubscriptionAlreadyExistsExcep
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Validated
 public interface SubscriptionRepository {
 
     void save(@NotNull @Valid Subscription subscription) throws SubscriptionAlreadyExistsException;
+
+    @Min(0)
+    long count();
 }

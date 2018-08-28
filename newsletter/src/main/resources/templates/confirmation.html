@@ -11,10 +11,12 @@
         <h2>Thank you for your subscription!</h2>
         <p>It is a pleasure to have you in our newsletter subscribers. You are the <span th:text="${numberOfSubscriptions}" />. reader!</p>
 
-        <h3>Please, see our latest highlights:</h3>
-        <ul th:each="newsletter : ${newsletterHiglights}">
-            <li th:text="${newsletter.subject}" />
-        </ul>
+        <section th:tag="remove" th:unless="${#lists.isEmpty(newsletterHiglights)}">
+            <h3>Please, see our latest highlights:</h3>
+            <ul th:each="newsletter : ${newsletterHiglights}">
+                <li th:text="${newsletter.subject}" />
+            </ul>
+        </section>
     </div>
 </body>
 </html>

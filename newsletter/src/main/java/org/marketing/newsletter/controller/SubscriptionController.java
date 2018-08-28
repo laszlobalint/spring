@@ -20,13 +20,14 @@ public class SubscriptionController {
     private static final String SUBSCRIPTION_FORM = "subscription-form";
     private static final String SUBSCRIPTION_FORM_ATTRIBUTE = "subscriptionForm";
     private static final String PATH_SUBSCRIBE = "/subscribe";
+
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private SubscriptionService subscriptionService;
 
     @GetMapping(value = {"/", PATH_SUBSCRIBE})
-    public String getSubscriptionForm(@ModelAttribute(SUBSCRIPTION_FORM_ATTRIBUTE) Subscription sub) {
+    public String getSubscriptionForm(@ModelAttribute(SUBSCRIPTION_FORM_ATTRIBUTE) Subscription s) {
         return SUBSCRIPTION_FORM;
     }
 
