@@ -34,6 +34,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">github.com</a>
+                <a class="navbar-brand" type="button" href="/">All Stories</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
                 <p class="navbar-text navbar-right" th:text="#{yourip}">Your IP Address: <a href="#" class="navbar-link">127.0.0.1</a></p>
@@ -44,7 +45,8 @@
    
     <article>
         <header>
-            <h1 th:text="${story.title}">Default Title</h1>
+            <h1>Oldest Story of the Blog</h1>
+            <h2 th:text="${story.title}">Default Title</h2>
             <p th:text="${#dates.format(story.posted, 'dd.MM.yyyy HH:mm')}">Posted on ?? ??, ???? at ??:?? ??</p>
         </header>
     
