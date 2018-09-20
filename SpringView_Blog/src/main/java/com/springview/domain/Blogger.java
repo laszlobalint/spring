@@ -1,5 +1,7 @@
 package com.springview.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ public class Blogger {
 	private Long id;
 	private String name;
 	private int age;
+	@JsonBackReference
 	@OneToMany(mappedBy = "blogger")
 	private List<Story> stories;
 	

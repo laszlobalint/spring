@@ -37,11 +37,19 @@ public class HomeController {
 	}
 
 	@RequestMapping("/title/{title}")
-	public String searchForUser(@PathVariable(value = "title") String title, Model model) throws Exception {
+	public String searchForStory(@PathVariable(value = "title") String title, Model model) throws Exception {
 		if (title == null)
 			throw new Exception("No story found with such title!");
 		model.addAttribute("story", storyService.getSpecificStory(title));
 		return "story";
+	}
+
+	@RequestMapping("/stories/{name}")
+	public String searchForStoriesByBloggerName(@PathVariable(value = "name") String name, Model model) throws Exception {
+		if (name == null)
+			throw new Exception("No stories for the given blogger found!");
+		model.addAttribute("stories", storyService.getStoriesByBloggerName(name));
+		return "stories";
 	}
 
 	@ExceptionHandler(Exception.class)
