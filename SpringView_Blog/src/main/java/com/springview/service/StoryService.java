@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 
 @Service
 public class StoryService {
-	
+
 	private StoryRepository storyRepo;
 	private BloggerRepository bloggerRepo;
 
@@ -40,11 +40,11 @@ public class StoryService {
 		return storyRepo.findByTitle(title);
 	}
 
-	@PostConstruct
-	public void init() {
-		Blogger startBlogger = new Blogger("Administrator", 100);
-		bloggerRepo.save(startBlogger);
-		Story startStory = new Story("First Test And Placeholder Article", "Sample content which was created during the initialization of the services in the Java code.", new Date(), startBlogger);
-		storyRepo.save(startStory);
-	}
+	//@PostConstruct
+	//public void init() {
+	//	Blogger startBlogger = new Blogger("Administrator", 100);
+	//	bloggerRepo.save(startBlogger);
+	//	Story startStory = new Story("First Test And Placeholder Article", "Sample content which was created during the initialization of the services in the Java code.", new Date(), startBlogger);
+	//	storyRepo.save(startStory);
+	//}
 }

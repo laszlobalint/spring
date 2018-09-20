@@ -12,7 +12,7 @@ import com.springview.service.StoryService;
 
 @Controller
 public class HomeController {
-	
+
 	private StoryService storyService;
 	
 	@Autowired

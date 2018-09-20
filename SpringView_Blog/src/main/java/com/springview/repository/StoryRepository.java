@@ -3,7 +3,9 @@ package com.springview.repository;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import com.springview.domain.Story;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface StoryRepository extends CrudRepository<Story, Long> {
 
 	// Query: SELECT * FROM story;
