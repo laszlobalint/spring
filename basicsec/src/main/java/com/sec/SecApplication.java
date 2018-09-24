@@ -1,12 +1,12 @@
-package com.appsecbasic;
+package com.sec;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BasicsecApplication {
+public class SecApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BasicsecApplication.class, args);
+		SpringApplication.run(SecApplication.class, args);
 	}
 }
