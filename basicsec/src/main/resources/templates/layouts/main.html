@@ -28,7 +28,7 @@
 				        <li class=""><a href="/bloggers">Bloggers</a></li>
 				    </ul>
 				    <div class="navbar-text navbar-right">
-				    Welcome <span sec:authentication="name">Anonymous </span>
+				    Welcome <span sec:authentication="name"> Anonymous </span>
 			           <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
 				    		| <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Logout</a>
 				      </form>
@@ -40,8 +40,8 @@
 		<div layout:fragment="loginContent">
 		</div>
 
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>		
 		<footer>
 			<p>Spring Boot Course - The original template was made by: http://therealdanvega.com</p>
 		</footer>
