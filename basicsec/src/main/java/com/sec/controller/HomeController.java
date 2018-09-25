@@ -65,6 +65,6 @@ public class HomeController {
     @RequestMapping(path = "/activation/{code}", method = RequestMethod.GET)
     public String activation(@PathVariable("code") String code, HttpServletResponse response) {
         String result = userService.userActivation(code);
-        return "auth/login";
+        return "auth/success";
     }
 }

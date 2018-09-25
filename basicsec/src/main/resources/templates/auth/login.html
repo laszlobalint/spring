@@ -9,7 +9,7 @@
 
     <form name="login" th:action="@{/login}" method="post" class="form-signin">
         <h2 class="form-signin-heading">Please, login in here</h2>
-        <div id="err" th:if="${param.error}" class="alert alert-danger">Wrong username or/and password</div>
+        <div id="err" th:if="${param.error}" class="alert alert-danger">Wrong username or/and password!</div>
         <div th:if="${param.logout}" class="alert alert-success">Logged out successfully</div>
         <label for="username" class="sr-only">E-mail address</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="E-mail address" required="true" />

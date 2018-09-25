@@ -12,6 +12,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
         registry.addViewController("/login").setViewName("auth/login");
+        registry.addViewController("/success").setViewName("auth/success");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 }
