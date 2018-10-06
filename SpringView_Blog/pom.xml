@@ -6,7 +6,7 @@
 	<groupId>com.springview</groupId>
 	<artifactId>springview</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>SpringBlogView</name>
 	<description>Demo Project For Spring Boot</description>
@@ -56,6 +56,12 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                        <scope>provided</scope>
+                </dependency>
 
 	</dependencies>
 
