@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create New User</title>
+    <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1>Create New User</h1>
+<form action="#" th:action="@{/users/}" th:object="${user}" method="post"> <!-- th:action: ABSOLUTE ROUTE -->
+    <label>Enter name:</label>
+    <br />
+    <input type="text" th:field="*{name}">
+    <br />
+    <label>Enter password:</label>
+    <br />
+    <input type="password" th:field="*{password}">
+    <br />
+    <label>Enter e-mail address:</label>
+    <br />
+    <input type="email" th:field="*{email}">
+    <br />
+    <input type="submit" value="Submit" />
+    <input type="button" value="Back to List" onclick="location.href='/users/'"/>
+</form>
+</body>
+</html>

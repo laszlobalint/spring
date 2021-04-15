@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div id="container">
+    <div id="navarea">
+        <ul id="nav">
+            <li><a th:href="@{/home/hello/}" title="home">Welcome</a></li>
+            <li><a th:href="@{/home/email/}" title="email">E-mail check</a></li>
+            <li><a th:href="@{/users/new/}" title="new">Registration</a></li>
+            <li><a th:href="@{/users/}" title="users">Users</a></li>
+            <li><a th:href="@{/users/}" title="cv">My CV</a></li>
+        </ul>
+    </div>
+    <div id="hdr"> <span id="sitetitle">Spring Page</span> <br />
+        <span id="subtitle">Spring Boot with Thymeleaf</span></div>
+    <div id="lftcol">
+        <div class="leftcolbox">
+            <div class="leftcolboxtop"></div>
+            <h2>Java + Spring + HTML</h2>
+            <p>Flow Academy - 2018.</p>
+        </div>
+        <div class="leftcolbox">
+            <div class="leftcolboxtop"></div>
+            <h2>Useful links:</h2>
+            <p> <a th:href="@{/home/hello/}">»Welcome</a><br />
+                <a th:href="@{/home/email/}">»E-mail check</a><br />
+                <a th:href="@{/users/new/}">»Registration</a><br />
+                <a th:href="@{/users/}">»Users</a><br />
+                <a th:href="@{/users/}"»My CV</a></p>
+            <br />
+        </div>
+    </div>
+    <div id="maincol">
+        <div class="rule">
+            <h1>Introducing Flow Academy</h1>
+        </div>
+        <p>A <strong>Flow Academy</strong> megalapításával vidéken, Szegeden elsők között indítjuk el fiatalok és pályaváltók számára speciális gyakorlatorientált képzésünket, melyben a versenyszféra körülményei között, valódi munkakörülményeket teremtve, kiváló mentorok és meghívott oktatók-előadók segítik felkészülésüket.          Ugyanazokat a módszertanokat, online rendszereket és programokat használjuk, amiket a legnagyobb IT cégek is. Képzési programunk segítségével, a Flow Academy diákjai 5 hónap alatt szerezhetnek olyan informatikai tudást Java- és Webfejlesztőként, mely tudásanyaggal képesek lesznek a képzést követően az IT szektorban elhelyezkedni. Képzésünk során nagy hangsúlyt fektetünk soft skill képzésekre is, mely hozzájárul személyiségfejlődésükhöz, segíti a csapatmunkára való felkészülést.</p>
+        <p><a href="" title="read more">Read more</a></p>
+    <div id="bttmbar"> <span id="copyright"> Copyright &copy; 2018. Flow Academy - László Bálint</span>
+        <ul id="bttmnav">
+            <li><a href="" title="home">Home</a></li>
+            <li><a href="" title="email">E-mail check</a></li>
+            <li><a href="" title="new">Registration</a></li>
+            <li><a href="" title="users">Users</a></li>
+            <li><a href="" title="cv">My CV</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

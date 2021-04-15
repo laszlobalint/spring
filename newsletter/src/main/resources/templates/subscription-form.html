@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{app.title}">Newsletter Subscription</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/subscription.css}" href="../static/css/subscription.css" />
+</head>
+<body>
+    <form method="post" th:action="@{/subscribe}" th:object="${subscriptionForm}">
+
+        <h1>Sing up for our newsletter</h1>
+        <h2>Get instant updates on newest products and special offers</h2>
+
+        <label>Full name:</label>
+        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"> Form Error</div>
+        <input type="text" th:field="*{fullName}" />
+
+        <label>E-mail address:</label>
+        <input type="email" th:field="*{emailAddress}" />
+        <div class="fieldErrorMessage" th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"> Form Error</div>
+
+        <div class="formErrorMessage" th:if="${#fields.hasErrors('global')}" th:errors="*{global}">Form Error</div>
+        <button type="submit">Submit Registration</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/newsletter
+    platform: postgresql
+    username: postgres
+    password: changeme
+    initialization-mode: always

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Users</title>
+    <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Password</th>
+        <th>E-mail</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    <border="1">
+    <tr>
+        <td th:inline="text"><a th:href="@{'/users/' + ${user.id}}">[[${user.id}]]</a></td>
+        <td th:text="${user.name}">...</td>
+        <td th:text="${user.password}">...</td>
+        <td th:text="${user.email}">...</td>
+        <td>
+        <form action="#" th:action="@{'/users/' + ${user.id}}" method="post" th:object="${user}">
+            <input type="hidden" th:field="${user.id}"/>
+            <button type="submit" value="Submit">Delete</button>
+        </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{'/users/edit/' + ${user.id}}" method="get" th:object="${user}">
+                <input type="hidden" th:field="${user.id}"/>
+                <button type="submit" value="Submit">Edit</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<input type="button" value="Add new user" onclick="location.href='/users/new'"/>
+<input type="button" value="Show all users" onclick="location.href='/users/'"/>
+<input type="button" value="Go to Main Page" onclick="location.href='/home/'"/>
+</body>
+</html>
